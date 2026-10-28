@@ -1,0 +1,64 @@
+BLOG DEL INVERNADERO AUTOMATIZADO
+Electrónica Digital · Universidad Mariano Gálvez de Guatemala · 2026
+
+CÓMO ABRIRLO
+1. Extrae el ZIP completo en una carpeta.
+2. Abre index.html con tu navegador.
+3. Conserva la carpeta assets junto a los archivos HTML.
+
+No requiere instalación, paquetes, base de datos ni conexión a Internet.
+También puedes subir estos archivos a un alojamiento para páginas estáticas.
+Al publicar, index.html debe quedar en la carpeta de inicio del sitio.
+
+QUÉ INCLUYE
+- Página principal con presentación, componentes, funcionamiento y equipo.
+- Cuatro entradas independientes: Fase I, Fase II, Fase III y Fase IV final.
+- Modo automático, modo manual y comunicación Bluetooth en el alcance final.
+- Únicos pendientes: puertas automáticas y sensor de flujo.
+- Galería con ampliación de imágenes y filtros para las entradas.
+- Diseño adaptable a computadora y teléfono.
+
+ARCHIVOS
+index.html                  Página principal.
+fase-i.html                 Propuesta.
+fase-ii.html                Análisis.
+fase-iii.html               Prototipo y pruebas de la etapa.
+fase-iv.html                Fase final, manual, Bluetooth y conclusiones.
+assets/styles.css           Apariencia del sitio.
+assets/app.js               Menú, filtros, explicación y galería.
+assets/img/                 Imágenes y esquemas.
+
+CONTENIDO
+Las entradas de las fases anteriores describen el avance de cada etapa.
+La Fase IV y los resúmenes de la portada presentan el alcance final indicado
+para el proyecto: solo las puertas y el sensor de flujo quedan pendientes.
+No se incluyeron valores de pruebas, pines, umbrales, nombres de aplicaciones
+ni comandos Bluetooth que no estuvieran confirmados para la versión final.
+
+IMÁGENES Y FOTOS REALES
+Se dejaron dos espacios reservados para fotografías reales del invernadero
+y del montaje. Los otros dos gráficos son esquemas genéricos del sistema.
+No se incluyeron fotografías inventadas ni imágenes generadas del montaje.
+
+Para colocar tus fotografías:
+1. Guarda las fotos en assets/img con nombres sencillos, sin espacios.
+   Por ejemplo: invernadero.jpg y pruebas.jpg.
+2. Busca foto-invernadero.svg o foto-pruebas.svg dentro de los HTML.
+3. Cambia esas rutas por las de tus fotos: assets/img/invernadero.jpg
+   o assets/img/pruebas.jpg. Haz el cambio en todos los HTML donde aparezcan.
+4. En la galería, cambia tanto src como href para abrir la fotografía nueva.
+5. Actualiza alt, el pie de foto y data-caption con la descripción correcta.
+6. Sustituye la etiqueta de fotografía pendiente por el título de la foto.
+Puedes usar JPG, PNG o WebP. No hace falta convertir tus fotos a SVG.
+
+Los espacios aparecen en:
+- index.html: portada, entradas del blog y galería.
+- fase-i.html: fotografía del invernadero.
+- fase-iii.html: fotografía del montaje y las pruebas.
+
+EDICIÓN
+Abre los HTML con un editor de texto para modificar los párrafos o nombres.
+Los colores y tamaños se encuentran en assets/styles.css.
+El sitio es un blog de presentación: los esquemas de control explican
+el proyecto; la página no se conecta al ESP32 ni controla el invernadero.
+No incluye formularios, cuentas, rastreadores ni recursos externos.
