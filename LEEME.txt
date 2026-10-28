@@ -5,60 +5,87 @@ CÓMO ABRIRLO
 1. Extrae el ZIP completo en una carpeta.
 2. Abre index.html con tu navegador.
 3. Conserva la carpeta assets junto a los archivos HTML.
+El sitio no requiere instalación, paquetes ni base de datos.
 
-No requiere instalación, paquetes, base de datos ni conexión a Internet.
-También puedes subir estos archivos a un alojamiento para páginas estáticas.
-Al publicar, index.html debe quedar en la carpeta de inicio del sitio.
+ACTUALIZACIÓN DE FOTOGRAFÍAS
+Se integraron las dos fotografías reales proporcionadas por el equipo.
+- Vista frontal: portada, entrada de la Fase IV y galería.
+- Vista lateral: galería, referencia del montaje en Fase III y sección de
+  fotografías de la Fase IV.
+- Las fotografías se ofrecen en WebP de 640, 960 y 1600 píxeles de ancho.
+- La galería permite abrir las imágenes completas.
+Los textos y esquemas de las otras secciones mantienen su contenido.
 
-QUÉ INCLUYE
-- Página principal con presentación, componentes, funcionamiento y equipo.
-- Cuatro entradas independientes: Fase I, Fase II, Fase III y Fase IV final.
-- Modo automático, modo manual y comunicación Bluetooth en el alcance final.
-- Únicos pendientes: puertas automáticas y sensor de flujo.
-- Galería con ampliación de imágenes y filtros para las entradas.
-- Diseño adaptable a computadora y teléfono.
+ACTUALIZAR EL SITIO EXISTENTE EN VERCEL
+1. Extrae este ZIP completo.
+2. Abre la carpeta o el repositorio que utilizas para publicar el sitio.
+3. Reemplaza index.html, fase-i.html, fase-iii.html, fase-iv.html,
+   assets/styles.css y LEEME.txt por los archivos de este ZIP.
+4. Copia en assets/img los seis archivos invernadero-frontal*.webp e
+   invernadero-lateral*.webp. Puedes eliminar foto-invernadero.svg y
+   foto-pruebas.svg: ya no se utilizan.
+5. Si Vercel está conectado a GitHub, guarda y sube los cambios al mismo
+   repositorio y a la rama vinculada al proyecto. Vercel generará el despliegue.
+   Si utilizas otro flujo, publica esta carpeta en el mismo proyecto de Vercel.
+6. Conserva index.html en la raíz y actualiza la página cuando termine.
+El ZIP contiene el sitio completo; también puedes reemplazar el contenido
+estático de tu proyecto con todos estos archivos.
 
-ARCHIVOS
-index.html                  Página principal.
+AGREGAR EL VIDEO CON YOUTUBE
+1. En YouTube, selecciona Crear > Subir video.
+2. Selecciona el archivo y completa los datos solicitados.
+3. En Visibilidad, elige No listado (según la región, Oculto).
+4. Abre el video, elige Compartir > Insertar y copia el valor de src del iframe.
+   Debe tener el formato https://www.youtube.com/embed/ID_DEL_VIDEO.
+5. Abre fase-iv.html y busca:
+   <h2 id="pendientes">Los dos pendientes</h2>
+6. Justo antes de ese encabezado, pega este bloque y reemplaza ID_DEL_VIDEO
+   por el identificador real de tu video:
+
+<h2 id="demostracion">Video de demostración</h2>
+<div class="video-frame">
+  <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO"
+    title="Demostración del invernadero automatizado"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen></iframe>
+</div>
+
+7. Para añadirlo al índice de la entrada, busca:
+   <li><a href="#pendientes">Los dos pendientes</a></li>
+   y pega justo antes:
+   <li><a href="#demostracion">Video de demostración</a></li>
+8. Guarda y vuelve a publicar los cambios en el mismo proyecto.
+El contenedor video-frame ya está definido para adaptarse al teléfono.
+No listado permite ver el video a quien tenga su enlace; no equivale a privado.
+La versión entregada no muestra un reproductor vacío ni un aviso de video pendiente.
+
+ALTERNATIVA: VIDEO MP4 EN LA CARPETA DEL SITIO
+Guarda el archivo como assets/video/invernadero.mp4 y utiliza este bloque,
+en el mismo lugar indicado para YouTube:
+
+<h2 id="demostracion">Video de demostración</h2>
+<video controls playsinline preload="metadata"
+  poster="assets/img/invernadero-frontal.webp"
+  style="display:block;width:100%;height:auto;border-radius:6px;margin:24px 0">
+  <source src="assets/video/invernadero.mp4" type="video/mp4">
+  <a href="assets/video/invernadero.mp4">Ver el video de demostración</a>
+</video>
+
+Para archivos de video grandes, YouTube evita incluir el video en el ZIP.
+Un video de YouTube necesita conexión a Internet para reproducirse.
+
+ARCHIVOS PRINCIPALES
+index.html                  Página principal y galería.
 fase-i.html                 Propuesta.
 fase-ii.html                Análisis.
 fase-iii.html               Prototipo y pruebas de la etapa.
-fase-iv.html                Fase final, manual, Bluetooth y conclusiones.
-assets/styles.css           Apariencia del sitio.
+fase-iv.html                Entrega final y fotografías del montaje.
+assets/styles.css           Apariencia y contenedor del video.
 assets/app.js               Menú, filtros, explicación y galería.
-assets/img/                 Imágenes y esquemas.
-
-CONTENIDO
-Las entradas de las fases anteriores describen el avance de cada etapa.
-La Fase IV y los resúmenes de la portada presentan el alcance final indicado
-para el proyecto: solo las puertas y el sensor de flujo quedan pendientes.
-No se incluyeron valores de pruebas, pines, umbrales, nombres de aplicaciones
-ni comandos Bluetooth que no estuvieran confirmados para la versión final.
-
-IMÁGENES Y FOTOS REALES
-Se dejaron dos espacios reservados para fotografías reales del invernadero
-y del montaje. Los otros dos gráficos son esquemas genéricos del sistema.
-No se incluyeron fotografías inventadas ni imágenes generadas del montaje.
-
-Para colocar tus fotografías:
-1. Guarda las fotos en assets/img con nombres sencillos, sin espacios.
-   Por ejemplo: invernadero.jpg y pruebas.jpg.
-2. Busca foto-invernadero.svg o foto-pruebas.svg dentro de los HTML.
-3. Cambia esas rutas por las de tus fotos: assets/img/invernadero.jpg
-   o assets/img/pruebas.jpg. Haz el cambio en todos los HTML donde aparezcan.
-4. En la galería, cambia tanto src como href para abrir la fotografía nueva.
-5. Actualiza alt, el pie de foto y data-caption con la descripción correcta.
-6. Sustituye la etiqueta de fotografía pendiente por el título de la foto.
-Puedes usar JPG, PNG o WebP. No hace falta convertir tus fotos a SVG.
-
-Los espacios aparecen en:
-- index.html: portada, entradas del blog y galería.
-- fase-i.html: fotografía del invernadero.
-- fase-iii.html: fotografía del montaje y las pruebas.
+assets/img/                 Fotografías y esquemas.
 
 EDICIÓN
-Abre los HTML con un editor de texto para modificar los párrafos o nombres.
-Los colores y tamaños se encuentran en assets/styles.css.
-El sitio es un blog de presentación: los esquemas de control explican
-el proyecto; la página no se conecta al ESP32 ni controla el invernadero.
-No incluye formularios, cuentas, rastreadores ni recursos externos.
+Los textos se modifican en los HTML y la apariencia en assets/styles.css.
+El sitio presenta el proyecto; no se conecta al ESP32 ni controla el invernadero.
